@@ -1,0 +1,94 @@
+# Appdo Skills
+
+Design, build, and verify mobile flows with Appdo.
+
+[Appdo](https://www.appdo.net) · [MCP setup](https://www.appdo.net/docs/mcp) · [Tiếng Việt](#tiếng-việt)
+
+## Included skill
+
+| Skill | Purpose |
+| --- | --- |
+| [appdo-mobile-design](skills/appdo-mobile-design/SKILL.md) | Research mobile patterns, implement screens in Appdo templates, and verify navigation, accessibility and visual states. Includes Expo / React Native guidance and a Learning Language AI example. |
+
+The skill works with local code and supplied references. Appdo MCP adds optional library research; an Appllama subscription is not required.
+
+## Install
+
+From your project directory:
+
+```sh
+npx skills@latest add phongkute778/appdo-skills --skill appdo-mobile-design
+```
+
+Choose a supported agent when prompted. To install specifically for Codex:
+
+```sh
+npx skills@latest add phongkute778/appdo-skills --skill appdo-mobile-design -a codex
+```
+
+To install user-wide, add `-g`. To inspect available skills before installing:
+
+```sh
+npx skills@latest add phongkute778/appdo-skills --list
+```
+
+For a manual installation, copy the entire `skills/appdo-mobile-design` directory into your agent's skills directory. Codex normally uses `$CODEX_HOME/skills` or `~/.codex/skills`. Keep the `references/` and `agents/` folders together. Compare an existing installation before replacing it. Open a new session if the agent has not refreshed its skill list.
+
+## Try it
+
+```text
+$appdo-mobile-design Improve the speaking practice flow in Learning Language AI. Keep the current theme and architecture, implement relevant states, and verify the flow in a simulator.
+```
+
+```text
+$appdo-mobile-design Review this mobile screen using the screenshot and local source. Prioritize readability, the primary action, and back behavior.
+```
+
+```text
+$appdo-mobile-design Research paywall patterns with Appdo MCP and recommend an approach for this template. Research only; do not change code.
+```
+
+## Optional Appdo MCP
+
+Endpoint: `https://www.appdo.net/mcp`
+
+Follow the [connection guide](https://www.appdo.net/docs/mcp) and authorize with your Appdo account. Installing this skill does not install a connector or grant account access.
+
+The skill checks the connected server's capabilities before researching. Appdo v1 supports keyword search, screen references, flow and element discovery, saved collections and published template details. All current tools are read-only. Semantic search and visual-similarity ranking are not implemented in v1. Public template details do not include purchased source downloads.
+
+Without a working connection, the skill uses the current code, design tokens and supplied images, and reports the research limitation.
+
+## Package structure
+
+```text
+skills/appdo-mobile-design/
+  SKILL.md
+  agents/openai.yaml
+  references/
+    appdo-mcp.md
+    appdo-templates.md
+    verification.md
+    sources.md
+```
+
+## Status
+
+Initial release: **0.1.0**. Package structure, local reference links and the 15 documented Appdo tool names have been checked against the implementation. A full mobile implementation task using this new skill has not yet been runtime-validated. The skill is not automatically integrated into Appdo AI Editor.
+
+## Tiếng Việt
+
+Bộ skill hỗ trợ thiết kế, triển khai và review luồng mobile của Appdo. Có thể sử dụng độc lập từ code và ảnh tham khảo; MCP là tùy chọn.
+
+Cài bằng lệnh ở trên, sau đó thử:
+
+```text
+$appdo-mobile-design Cải thiện luồng speaking practice của Learning Language AI, giữ theme hiện tại và kiểm tra trên simulator.
+```
+
+Skill hướng dẫn giữ cấu trúc template, dùng đúng công cụ MCP, hoàn thiện hành vi và phân biệt kết quả đã kiểm tra với phần chưa xác minh.
+
+## Credits and license
+
+Inspired by the organization and research-to-implementation approach of [Appllama Skills](https://github.com/Appllama/appllama-skills). Instructions were written for Appdo; no upstream library screenshots, branding assets or source code are bundled. See [sources and adaptation](skills/appdo-mobile-design/references/sources.md).
+
+This repository's skill instructions and documentation are available under the [MIT license](LICENSE). This license does not grant rights to third-party trademarks, library media or separately licensed Appdo templates. This project is not affiliated with Appllama.
